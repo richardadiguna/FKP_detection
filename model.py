@@ -20,8 +20,7 @@ class Net(nn.Module):
         self.fc2 = nn.Linear(2048, 1024)
         self.fc2_drop = nn.Dropout(p=0.40)
         self.fc3 = nn.Linear(1024, keypoints)
-        
-        
+
     def forward(self, x):
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
